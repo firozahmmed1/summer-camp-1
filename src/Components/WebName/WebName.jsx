@@ -1,5 +1,5 @@
 
-const Footer = () => {
+const WebName = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const Footer = () => {
     );
 };
 
-export default Footer;
+export default WebName;
