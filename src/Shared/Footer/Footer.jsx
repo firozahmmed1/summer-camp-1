@@ -18,7 +18,7 @@ const Footer = () => {
                        
                     </div>
                     <div>
-                        <span className="footer-title">Company</span>
+                        <span className="footer-title">Address</span>
                         <p className=" ">House #64, Road-10, Sector-10, Uttara-1230, <br /> Dhaka, Bangladesh </p>
                         
                     </div>
