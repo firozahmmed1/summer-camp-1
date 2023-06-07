@@ -22,7 +22,7 @@ const Navbar = () => {
                         </ul>
                     </div>
 
-                   <div className="flex justify-center items-center">
+                   <div className=" hidden md:block md:flex justify-center items-center">
                    <Link className=" normal-case text-xl">
                       <img width={50} src={logo} alt="" />
                       </Link>
