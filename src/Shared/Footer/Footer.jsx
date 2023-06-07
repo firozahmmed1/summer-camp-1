@@ -1,5 +1,6 @@
 import Container from "../../Components/Container/Container";
 import logo from "../../assets/logo/ass-12-logo.png"
+import moment from 'moment';
 const Footer = () => {
     return (
         <div className="bg-[#452c63]">
@@ -13,19 +14,18 @@ const Footer = () => {
                     <div>
                         <span className="footer-title">Contact Info</span>
                         <a className="link link-hover">Phone: +8801746719090</a>
+                        <a className="link link-hover">Email: firozahmmed05@gmail.com</a>
                        
                     </div>
                     <div>
                         <span className="footer-title">Company</span>
-                        <a className="link link-hover">About us</a>
-                        <a className="link link-hover">Contact</a>
-                        <a className="link link-hover">Jobs</a>
-                        <a className="link link-hover">Press kit</a>
+                        <p className=" ">House #64, Road-10, Sector-10, Uttara-1230, <br /> Dhaka, Bangladesh </p>
+                        
                     </div>
                 </footer>
                 <div className="footer footer-center p-4 text-base-content">
                     <div>
-                        <p className="text-white">Copyright © 2023 - All right reserved by Art & craft School</p>
+                        <p className="text-white">Copyright © {moment().format('YYYY')} - All right reserved by Art & craft School</p>
                     </div>
                 </div>
             </Container>
