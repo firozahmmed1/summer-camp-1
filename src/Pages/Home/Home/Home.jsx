@@ -1,10 +1,11 @@
 import Container from "../../../Components/Container/Container";
+import Loader from "../../../Shared/Loader/Loader";
 
 const Home = () => {
     return (
         <div>
             <Container>
-            <p>Homepage</p>
+           <Loader></Loader>
             </Container>
         </div>
     );
