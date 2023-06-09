@@ -1,14 +1,19 @@
 import { Link, Outlet } from "react-router-dom";
 import Container from "../Components/Container/Container";
+import useAuth from "../../public/useAuth/useAuth";
 
 const Dashboard = () => {
+    const {user} =useAuth()
+    console.log(user)
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                    <Outlet></Outlet>
+                    
                     <h1>Hello</h1>
+
+                    <Outlet></Outlet>
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
@@ -18,17 +23,20 @@ const Dashboard = () => {
                         
                         <div className="avatar mt-10 flex items-center justify-center">
                             <div className="w-24 rounded-full ring ring-white ring-offset-base-100 ">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                                <img src={user?.photoURL} />
                             </div>
                         </div>
                          <div className="mt-2">
-                            <h1 className="text-white text-xl italic font-bold text-center">Name</h1>
+                            <h1 className="text-white text-xl italic font-bold text-center">{user?.displayName}</h1>
                             <p className="text-white font-semibold text-center ">Student</p>
                          </div >
                         <div className="divider before:bg-primary after:bg-secondary"></div> 
 
                         <div className="">
-                        <li className="text-white items-center font-semibold"><Link to="/">Dashboard-Student</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard">Dashboard-Student</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">My Selected Classes</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">My Enrolled Classes</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">Payment History</Link></li>
                         </div>
                         
                     </ul>
