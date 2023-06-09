@@ -4,6 +4,8 @@ import useAuth from "../../public/useAuth/useAuth";
 
 const Dashboard = () => {
     const {user} =useAuth()
+
+    const isStudent = false;
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
@@ -29,10 +31,18 @@ const Dashboard = () => {
                         <div className="divider before:bg-primary after:bg-secondary"></div> 
 
                         <div className="">
-                           <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard">Dashboard-Student</Link></li>
+                            {/* Student--- */}
+                           {isStudent && <> 
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/addrole">Dashboard-Student</Link></li>
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myseletedclass">My Selected Classes</Link></li>
-                           <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">My Enrolled Classes</Link></li>
-                           <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">Payment History</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myenrolledclasses">My Enrolled Classes</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/paymenthistory">Payment History</Link></li>
+                           </>}
+                            {/* Instructor--- */}
+                            <>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/intracture">Dashboard-Intracture</Link></li>
+                            </>
+                            
                         </div>
                         
                     </ul>

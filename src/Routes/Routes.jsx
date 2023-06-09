@@ -11,6 +11,9 @@ import PraviteRoute from "./PraviteRoute";
 import SelectedClass from "../Pages/Dashboard/SelectedClass";
 import AddRole from "../Pages/Dashboard/AddRole";
 import Payment from "../Pages/Dashboard/Payment";
+import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
+import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses";
+import Intracture from "../Pages/Dashboard/Intracture";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +31,7 @@ export const router = createBrowserRouter([
                 children:([
                     //--------- Student
                     {
-                        path:'/dashboard',
+                        path:'/dashboard/addrole',
                         element:<AddRole></AddRole>
                     },
                     {
@@ -36,9 +39,24 @@ export const router = createBrowserRouter([
                         element:<SelectedClass></SelectedClass>
                     },
                     {
+                        path:'/dashboard/myenrolledclasses',
+                        element:<MyEnrolledClasses></MyEnrolledClasses>
+                    },
+                    {
                         path:'/dashboard/payment',
                         element:<Payment></Payment>
+                    },
+                    {
+                        path:'/dashboard/paymenthistory',
+                        element:<PaymentHistory></PaymentHistory>
+                    },
+
+                    // ------------------instracture--------
+                    {
+                        path:'/dashboard/intracture',
+                        element:<Intracture></Intracture>
                     }
+
                 ])
             },
             {
