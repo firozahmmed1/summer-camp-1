@@ -14,6 +14,7 @@ import Payment from "../Pages/Dashboard/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses";
 import Intracture from "../Pages/Dashboard/Intracture";
+import AddaClass from "../Pages/Dashboard/AddaClass";
 
 export const router = createBrowserRouter([
     {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
                     {
                         path:'/dashboard/intracture',
                         element:<Intracture></Intracture>
+                    },
+                    {
+                        path:'/dashboard/addaclass',
+                        element:<AddaClass></AddaClass>
                     }
 
                 ])

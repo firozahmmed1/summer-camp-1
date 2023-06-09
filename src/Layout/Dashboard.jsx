@@ -41,6 +41,7 @@ const Dashboard = () => {
                             {/* Instructor--- */}
                             <>
                             <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/intracture">Dashboard-Intracture</Link></li>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/addaclass">Add a Class</Link></li>
                             </>
                             
                         </div>
