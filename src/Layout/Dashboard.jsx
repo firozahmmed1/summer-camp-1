@@ -6,6 +6,7 @@ const Dashboard = () => {
     const {user} =useAuth()
 
     const isStudent = false;
+    const isInstructor = false;
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
@@ -39,11 +40,15 @@ const Dashboard = () => {
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/paymenthistory">Payment History</Link></li>
                            </>}
                             {/* Instructor--- */}
-                            <>
-                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/intracture">Dashboard-Intracture</Link></li>
+                            {isInstructor && <>
                             <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/addaclass">Add a Class</Link></li>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myclasses">My Classes</Link></li>
+                            </>}
+                            {/* ---Admin */}
+                            <>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/manageclasses">Manage Classes</Link></li>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/manageuser">Manage Users</Link></li>
                             </>
-                            
                         </div>
                         
                     </ul>

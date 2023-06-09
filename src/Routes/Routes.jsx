@@ -13,8 +13,10 @@ import AddRole from "../Pages/Dashboard/AddRole";
 import Payment from "../Pages/Dashboard/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory";
 import MyEnrolledClasses from "../Pages/Dashboard/MyEnrolledClasses";
-import Intracture from "../Pages/Dashboard/Intracture";
 import AddaClass from "../Pages/Dashboard/AddaClass";
+import MyClasses from "../Pages/Dashboard/MyClasses";
+import ManagesClasses from "../Pages/Dashboard/ManagesClasses";
+import ManageUser from "../Pages/Dashboard/ManageUser";
 
 export const router = createBrowserRouter([
     {
@@ -54,12 +56,22 @@ export const router = createBrowserRouter([
 
                     // ------------------instracture--------
                     {
-                        path:'/dashboard/intracture',
-                        element:<Intracture></Intracture>
-                    },
-                    {
                         path:'/dashboard/addaclass',
                         element:<AddaClass></AddaClass>
+                    },
+                    {
+                        path:'/dashboard/myclasses',
+                        element:<MyClasses></MyClasses>
+                    },
+
+                    // -------Admin-------
+                    {
+                        path:'/dashboard/manageclasses',
+                        element:<ManagesClasses></ManagesClasses>
+                    },
+                    {
+                        path:'/dashboard/manageuser',
+                        element:<ManageUser></ManageUser>
                     }
 
                 ])
