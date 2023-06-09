@@ -4,16 +4,12 @@ import useAuth from "../../public/useAuth/useAuth";
 
 const Dashboard = () => {
     const {user} =useAuth()
-    console.log(user)
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
                 <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
                 <div className="drawer-content flex flex-col items-center justify-center">
-                    
-                    <h1>Hello</h1>
-
-                    <Outlet></Outlet>
+                    <Outlet></Outlet>  
                     <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
 
                 </div>
@@ -34,7 +30,7 @@ const Dashboard = () => {
 
                         <div className="">
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard">Dashboard-Student</Link></li>
-                           <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">My Selected Classes</Link></li>
+                           <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myseletedclass">My Selected Classes</Link></li>
                            <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">My Enrolled Classes</Link></li>
                            <li className="text-orange-400 items-center font-semibold"><Link to="/myseletedclass">Payment History</Link></li>
                         </div>
