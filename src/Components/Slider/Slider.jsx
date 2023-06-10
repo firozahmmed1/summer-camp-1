@@ -6,7 +6,7 @@ import slider3 from "../../assets/Slider/Slider-3 (2).jpeg"
 const Slider = () => {
     return (
         <div>
-            <div className="carousel w-full ">
+            <div className="carousel w-full mb-12 ">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src={slider1} className="w-full " />
                     <div className="bg-gradient-to-r  to-[rgb(139,0,139, 0)] from-black  absolute flex items-center w-full h-full ">
