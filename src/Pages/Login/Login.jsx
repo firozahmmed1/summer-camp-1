@@ -63,7 +63,7 @@ const Login = () => {
                     <div className="text-center lg:text-left">
                         <img src={loginformImg} alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full lg:w-1/2 shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full lg:w-1/2 bg-base-100">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
@@ -80,11 +80,6 @@ const Login = () => {
                                     <input type={showHidePass ? 'password' : 'text'} {...register("password", { required: true })} placeholder="password" className="input input-bordered relative w-full" /><span className="absolute right-12 cursor-pointer">{showHidePass ? <BsEyeSlash onClick={() => setShowHidePass(!showHidePass)}></BsEyeSlash> : <BsEye onClick={() => setShowHidePass(!showHidePass)}></BsEye>}</span>
                                 </div>
                                  {errors.password && <span className="text-red-800">This field is required</span>}
-
-
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
                             </div>
                             <div className="form-control mt-6">
                                 <button  className="btn bg-gradient-to-r from-green-600 via-orange-500 to-red-600 normal-case text-white hover:btn-primary">Login</button>

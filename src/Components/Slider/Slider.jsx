@@ -17,9 +17,9 @@ const Slider = () => {
                         </Container>
 
                     </div>
-                    <div className="absolute flex  transform -translate-y-1/2 right-5 bottom-0">
-                        <a href="#slide1" className="btn bg-purple-600 btn-circle mr-3">❮</a>
-                        <a href="#slide2" className="btn  bg-purple-600 btn-circle">❯</a>
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide1" className="btn bg-[rgba(255,165,0,0.3)] mr-3">❮</a>
+                        <a href="#slide2" className="btn  bg-[rgba(255,165,0,0.3)] mr-3">❯</a>
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full ">
@@ -31,9 +31,9 @@ const Slider = () => {
                             </div>
                         </Container>
                     </div>
-                    <div className="absolute flex  transform -translate-y-1/2 right-5 bottom-0">
-                        <a href="#slide2" className="btn bg-purple-600 btn-circle mr-3">❮</a>
-                        <a href="#slide3" className="btn  bg-purple-600 btn-circle">❯</a>
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide2" className="btn bg-[rgba(255,165,0,0.3)] mr-3">❮</a>
+                        <a href="#slide3" className="btn bg-[rgba(255,165,0,0.3)] mr-3">❯</a>
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full ">
@@ -41,13 +41,13 @@ const Slider = () => {
                     <div className="bg-gradient-to-r  to-[rgb(139,0,139, 0)] from-black  absolute flex items-center w-full h-full ">
                         <Container>
                             <div className="space-y-2">
-                                <h1 className="font-bold text-5xl italic text-white">Let Your Creativity Flourish in the Vibrant Atmosphere of Our Craft School</h1>
+                                <h1 className="font-bold text-5xl italic text-white">Let Your Creativity Flourish in the Vibrant <br /> Atmosphere of Our Craft School</h1>
                             </div>
                         </Container>
                     </div>
-                    <div className="absolute flex  transform -translate-y-1/2 right-5 bottom-0">
-                        <a href="#slide3" className="btn bg-purple-600 btn-circle mr-3">❮</a>
-                        <a href="#slide1" className="btn  bg-purple-600 btn-circle">❯</a>
+                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                        <a href="#slide3" className="btn bg-[rgba(255,165,0,0.3)] mr-3 ">❮</a>
+                        <a href="#slide1" className="btn bg-[rgba(255,165,0,0.3)] mr-3 ">❯</a>
                     </div>
                 </div>
 

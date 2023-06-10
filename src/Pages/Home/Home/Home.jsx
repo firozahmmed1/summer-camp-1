@@ -1,14 +1,15 @@
 
 import Slider from "../../../Components/Slider/Slider";
 import PopularInstractureSection from "../PopularInstractureSection/PopularInstractureSection";
-import PopularSection from "../PopularSection/PopularSection";
+import PopularClassSection from "../PopularSection/PopularClassSection";
+
 
 
 const Home = () => {
     return (
         <div>
              <Slider></Slider>
-             <PopularSection></PopularSection>
+             <PopularClassSection></PopularClassSection>
              <PopularInstractureSection></PopularInstractureSection>
         </div>
     );

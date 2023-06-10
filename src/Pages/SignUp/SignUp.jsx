@@ -72,7 +72,7 @@ const SignUp = () => {
                     <div className="text-center lg:text-left">
                        <img src={loginformImg} alt="" />
                     </div>
-                    <div className="card flex-shrink-0 w-full lg:w-1/2 shadow-2xl bg-base-100">
+                    <div className="card flex-shrink-0 w-full lg:w-1/2 bg-base-100">
                         <div className="card-body">
                             <div className="form-control">
                                 <label className="label">
