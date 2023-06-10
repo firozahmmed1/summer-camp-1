@@ -1,12 +1,11 @@
-import Container from "../../../Components/Container/Container";
-import Loader from "../../../Shared/Loader/Loader";
+
+import Slider from "../../../Components/Slider/Slider";
+
 
 const Home = () => {
     return (
         <div>
-            <Container>
-           <Loader></Loader>
-            </Container>
+             <Slider></Slider>
         </div>
     );
 };
