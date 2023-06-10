@@ -18,6 +18,7 @@ import MyClasses from "../Pages/Dashboard/MyClasses";
 import ManagesClasses from "../Pages/Dashboard/ManagesClasses";
 import ManageUser from "../Pages/Dashboard/ManageUser";
 import InstructorsPage from "../Pages/Instructors Page/InstructorsPage";
+import Classes from "../Pages/Classes/Classes";
 
 export const router = createBrowserRouter([
     {
@@ -29,10 +30,13 @@ export const router = createBrowserRouter([
                 element:<Home></Home>
             },
             {
-                path:'instructorspage',
+                path:'/instructorspage',
                 element:<InstructorsPage></InstructorsPage>
             },
-            
+            {
+                path:'/classes',
+                element:<Classes></Classes>
+            },
             {
                 path:'/dashboard',
                 element:<PraviteRoute><Dashboard></Dashboard></PraviteRoute>,
