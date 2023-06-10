@@ -17,6 +17,7 @@ import AddaClass from "../Pages/Dashboard/AddaClass";
 import MyClasses from "../Pages/Dashboard/MyClasses";
 import ManagesClasses from "../Pages/Dashboard/ManagesClasses";
 import ManageUser from "../Pages/Dashboard/ManageUser";
+import InstructorsPage from "../Pages/Instructors Page/InstructorsPage";
 
 export const router = createBrowserRouter([
     {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>
+            },
+            {
+                path:'instructorspage',
+                element:<InstructorsPage></InstructorsPage>
             },
             
             {

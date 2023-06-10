@@ -7,7 +7,7 @@ const Navbar = () => {
     const { user,LogOut } = useAuth()
     const navOptions = <>
         <Link to="/" className="px-2 font-semibold text-[16px] text-green-950">Home</Link>
-        <Link to="/" className="px-2 font-semibold text-[16px] text-green-950">Instructors</Link>
+        <Link to="/instructorspage" className="px-2 font-semibold text-[16px] text-green-950">Instructors</Link>
         <Link to="/" className="px-2 font-semibold text-[16px] text-green-950">Classes</Link>
         {user && <Link to="/dashboard" className="px-2 font-semibold text-[16px] text-green-950">Dashboard</Link>}
 
