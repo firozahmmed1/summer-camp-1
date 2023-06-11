@@ -43,7 +43,18 @@ const Login = () => {
     }
     const googleLogin =()=>{
         socialLogin()
-        .then(()=>{
+        .then((result)=>{
+            const user = result.user;
+            const updateUser = { name: user?.displayName, email: user?.email, role: "student" }
+                    fetch('http://localhost:5000/users', {
+                        method: "post",
+                        headers: {
+                            "content-type": "application/json"
+                        },
+                        body: JSON.stringify(updateUser)
+                    })
+                        .then(res => res.json())
+                        .then(() => { })
             Swal.fire({
                 position: 'top-center',
                 icon: 'success',

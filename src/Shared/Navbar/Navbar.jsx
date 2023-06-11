@@ -53,7 +53,7 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {!user ? <Link className="md:mr-4 md:font-semibold text-green-950" to="/login">Login</Link>
-                        : <div className="dropdown dropdown-end">
+                        : <div className="dropdown dropdown-left">
                             <label tabIndex={0} className=" cursor-pointer m-1">
                                 <div className="avatar">
                                     <div className="w-10 rounded-full flex justify-center items-center">

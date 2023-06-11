@@ -5,9 +5,9 @@ import useAuth from "../../public/useAuth/useAuth";
 const Dashboard = () => {
     const {user} =useAuth()
 
-    const isStudent = false;
+    const isStudent = true;
     const isInstructor = false;
-    const isAdmin = true;
+    const isAdmin = false;
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
