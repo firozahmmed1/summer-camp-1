@@ -1,13 +1,17 @@
 import { Link, Outlet } from "react-router-dom";
 import Container from "../Components/Container/Container";
 import useAuth from "../../public/useAuth/useAuth";
+import useInstructor from "../Hooks/useInstructor/useInstructor";
+import useAdmin from "../Hooks/useAdmin/useAdmin";
 
 const Dashboard = () => {
     const {user} =useAuth()
-
+    const[isInstructor] =useInstructor();
+    const[isAdmin]=useAdmin()
+console.log(isInstructor)
     const isStudent = true;
-    const isInstructor = false;
-    const isAdmin = false;
+    // const isInstructor = false;
+    // const isAdmin = false;
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">

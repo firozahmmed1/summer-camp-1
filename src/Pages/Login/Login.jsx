@@ -44,7 +44,7 @@ const Login = () => {
     const googleLogin =()=>{
         socialLogin()
         .then((result)=>{
-            const user = result.user;
+            const user = result?.user;
             const updateUser = { name: user?.displayName, email: user?.email, role: "student" }
                     fetch('http://localhost:5000/users', {
                         method: "post",

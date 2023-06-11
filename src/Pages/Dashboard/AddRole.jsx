@@ -1,15 +1,13 @@
 import Swal from "sweetalert2";
-import useAuth from "../../../public/useAuth/useAuth";
 import { useQuery } from '@tanstack/react-query'
+import useAxiosSecure from "../../Hooks/useAxiosSecure/useAxiosSecure";
 
 const AddRole = () => {
-    const { user } = useAuth();
-
-    const { data: users = [], refetch } = useQuery(['user'], async () => {
-        const res = await fetch('http://localhost:5000/users')
-        return res.json()
+    const [axiosSecure] =useAxiosSecure()
+    const { data: users = [], refetch } = useQuery(['users'], async () => {
+        const res =await axiosSecure.get('/users')
+        return res.data
     });
-
     const handleInstracture = (insUser) => {
         fetch(`http://localhost:5000/users/${insUser._id}`, {
             method: 'put'
@@ -17,7 +15,7 @@ const AddRole = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount > 0) {
-                    refetch
+                    refetch()
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
@@ -44,7 +42,7 @@ const AddRole = () => {
                 </thead>
                 <tbody>
                     {
-                        users.map((newUser, index) => (
+                        users?.map((newUser, index) => (
                             <tr key={index}>
                                 <th>{index + 1}</th>
                                 <td>{newUser?.name}</td>
