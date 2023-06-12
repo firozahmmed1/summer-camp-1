@@ -7,9 +7,8 @@ import useAdmin from "../Hooks/useAdmin/useAdmin";
 
 const Dashboard = () => {
     const {user} =useAuth()
-    const[isAdmin]=useAdmin();
     const[isInstructor] =useInstructor();
-    
+    const[isAdmin]=useAdmin();
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
