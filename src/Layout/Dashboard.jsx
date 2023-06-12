@@ -4,14 +4,12 @@ import useAuth from "../../public/useAuth/useAuth";
 import useInstructor from "../Hooks/useInstructor/useInstructor";
 import useAdmin from "../Hooks/useAdmin/useAdmin";
 
+
 const Dashboard = () => {
     const {user} =useAuth()
+    const[isAdmin]=useAdmin();
     const[isInstructor] =useInstructor();
-    const[isAdmin]=useAdmin()
-console.log(isInstructor)
-    const isStudent = true;
-    // const isInstructor = false;
-    // const isAdmin = false;
+    
     return (
         <Container>
             <div className="drawer lg:drawer-open mt-12 mb-12">
@@ -32,28 +30,29 @@ console.log(isInstructor)
                         </div>
                          <div className="mt-2">
                             <h1 className="text-white text-xl italic font-bold text-center">{user?.displayName}</h1>
-                            <p className="text-white font-semibold text-center ">Student</p>
+                            <p className="text-white font-semibold text-center ">{isInstructor?'Instructor':isAdmin? 'Admin': 'Student'}</p>
                          </div >
                         <div className="divider before:bg-primary after:bg-secondary"></div> 
 
                         <div className="">
-                            {/* Student--- */}
-                           {isStudent && <> 
+                            
+                            {isInstructor ?<>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/addaclass">Add a Class</Link></li>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myclasses">My Classes</Link></li>
+                            </>
+                             :isAdmin?
+                           <>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/manageclasses">Manage Classes</Link></li>
+                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/manageuser">Manage Users</Link></li>
+                            </>
+                            :
+                            <> 
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/addrole">Dashboard-Student</Link></li>
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myseletedclass">My Selected Classes</Link></li>
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myenrolledclasses">My Enrolled Classes</Link></li>
                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/paymenthistory">Payment History</Link></li>
                            </>}
-                            {/* Instructor--- */}
-                            {isInstructor && <>
-                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/addaclass">Add a Class</Link></li>
-                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/myclasses">My Classes</Link></li>
-                            </>}
-                            {/* ---Admin */}
-                           {isAdmin && <>
-                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/manageclasses">Manage Classes</Link></li>
-                            <li className="text-orange-400 items-center font-semibold"><Link to="/dashboard/manageuser">Manage Users</Link></li>
-                            </>}
+
                         </div>
                         
                     </ul>

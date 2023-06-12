@@ -26,7 +26,27 @@ const AddRole = () => {
                 }
 
             })
-    }
+     }
+
+     const handleAdmin =(adminUser)=>{
+        fetch(`http://localhost:5000/users/admin/${adminUser._id}`, {
+            method: 'put'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    refetch()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+
+            })
+     }
     return (
         <div className="overflow-x-auto w-full px-10">
             <table className="table">
@@ -49,11 +69,14 @@ const AddRole = () => {
                                 <td>{newUser?.email}</td>
                                 <td>{newUser?.role}</td>
                                 <td className="space-x-2">
-                                     { newUser.role ==="instructor" ? <button disabled className="btn btn-accent normal-case btn-xs">Make Instructor</button>:
+                                     { newUser.role ==="instructor" ? <button disabled className="btn btn-accent normal-case btn-xs">Instructor</button>:
                                      <button onClick={()=> handleInstracture(newUser)} className="btn btn-accent normal-case btn-xs">Make Instructor</button>
                                      }
                                    
-                                    <button className="btn btn-warning normal-case btn-xs">Make Admin</button>
+                                    {newUser.role ==="admin" ? <button disabled className="btn btn-accent normal-case btn-xs">Admin</button>
+                                    :<button onClick={()=>handleAdmin(newUser)} className="btn btn-warning normal-case btn-xs">Make Admin</button>
+                                    
+                                }
                                 </td>
                             </tr>
                         ))

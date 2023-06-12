@@ -11,12 +11,9 @@ const useInstructor = () => {
         enabled:!loading,
         queryFn: async () => {
           const res = await axiosSecure.get(`/users/instructor/${user?.email}`)
-         
-          return res.data
+          return res.data.instructor
         },
       })
-      
-    console.log(isInstructor)
     return [isInstructor, isInstractureLoading]
 };
 export default useInstructor;
