@@ -1,14 +1,14 @@
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../Hooks/useAxiosSecure/useAxiosSecure";
 
+
 const MyClasses = () => {
      const [axiosSecure] =useAxiosSecure();
-
      const { data: classes = []} = useQuery(['classes'], async () => {
         const res =await axiosSecure.get('/classes')
         return res.data
     });
-    console.log(classes)
+
     return (
         <div className="overflow-x-auto w-full">
             <table className="table table-xs">
