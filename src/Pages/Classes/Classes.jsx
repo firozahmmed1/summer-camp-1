@@ -19,7 +19,7 @@ const Classes = () => {
   
    
     const {data: classes=[]} = useQuery(['classes'], async()=>{
-        const res = await axios.get('http://localhost:5000/classes/allclasses')
+        const res = await axios.get('https://ass-sever.vercel.app/classes/allclasses')
         return res.data
     }) 
 
@@ -33,7 +33,7 @@ const Classes = () => {
           })
     }
    const handleBookin =bookingData=>{
-         axios.post('http://localhost:5000/booking',{bookingData,email:user?.email, level:'booked'})
+         axios.post('https://ass-sever.vercel.app/booking',{bookingData,email:user?.email, level:'booked'})
          .then(res => {
             refetch();
             if(res.data.acknowledged===true){

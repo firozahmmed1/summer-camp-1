@@ -36,7 +36,7 @@ const SignUp = () => {
                 createProfile(data.name, data.photo)
                     .then(() => {
                         const updateUser = { name: data.name, email: data.email, image:data.photo, role: "student" }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://ass-sever.vercel.app/users', {
                             method: "post",
                             headers: {
                                 "content-type": "application/json"
@@ -65,7 +65,7 @@ const SignUp = () => {
             .then((result) => {
                 const user = result.user;
                 const updateUser = { name: user?.displayName, email: user?.email, iamge:user?.photoURL, role: "student" }
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://ass-sever.vercel.app/users', {
                             method: "post",
                             headers: {
                                 "content-type": "application/json"

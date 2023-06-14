@@ -12,14 +12,14 @@ const ManagesClasses = () => {
         return res.data
     });
     const handledleSatsus =(role, ad)=>{
-     axios.put(`http://localhost:5000/classes/updatedata/${ad._id}`,{status:role})
+     axios.put(`https://ass-sever.vercel.app/classes/updatedata/${ad._id}`,{status:role})
     .then(()=> {
         refetch()
     })
 }
 const handleModal=(ml)=>{
     const feedback = feebackRef.current.value;
-    axios.put(`http://localhost:5000/classes/adminmodal/${ml._id}`,{feedback:feedback})
+    axios.put(`https://ass-sever.vercel.app/classes/adminmodal/${ml._id}`,{feedback:feedback})
     .then(res =>{console.log(res.data)
         refetch()
         if(res.data.acknowledged===true){

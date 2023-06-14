@@ -37,7 +37,7 @@ const AddaClass = () => {
                 seats,
                 price
             }
-            axios.post('http://localhost:5000/classes',classData)
+            axios.post('https://ass-sever.vercel.app/classes',classData)
             .then(res => {
                 if(res.data.acknowledged===true){
                     Swal.fire({

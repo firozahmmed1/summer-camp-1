@@ -65,7 +65,7 @@ const CheckoutForm = ({price, id}) => {
                 transactionId:paymentIntent.id,
                 courseId:id
             }
-             axios.post('http://localhost:5000/payment', {payment})
+             axios.post('https://ass-sever.vercel.app/payment', {payment})
               .then(res => console.log(res.data))
               Swal.fire({
                 position: 'top-end',

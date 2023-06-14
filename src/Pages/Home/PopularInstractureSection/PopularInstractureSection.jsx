@@ -5,7 +5,7 @@ import axios from "axios";
 const PopularInstractureSection = () => { 
 
     const {data: users=[]}= useQuery(['users'], async()=>{
-          const res = await axios.get('http://localhost:5000/users/inslimit');
+          const res = await axios.get('https://ass-sever.vercel.app/users/inslimit');
           return res.data
     })
     return (

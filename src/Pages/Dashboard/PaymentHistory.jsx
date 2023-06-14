@@ -6,7 +6,7 @@ const PaymentHistory = () => {
     const {user} = useAuth();
     const[newdata, setNewData] =useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/payment')
+        axios.get('https://ass-sever.vercel.app/payment')
             .then(res => setNewData(res.data)
             )
     }, [])

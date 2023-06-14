@@ -5,17 +5,17 @@ import axios from "axios";
 const ManageUser = () => {
     const [axiosSecure] = useAxiosSecure();
     const {data: users=[], refetch} = useQuery( ['users'], async () => {
-          const res = await axiosSecure.get('http://localhost:5000/users/alldata')
+          const res = await axiosSecure.get('https://ass-sever.vercel.app/users/alldata')
           return res.data
       }) 
 const handleMakeAdmin =aduser=>{
-       axios.put(`http://localhost:5000/users/makeadmin/${aduser._id}`)
+       axios.put(`https://ass-sever.vercel.app/users/makeadmin/${aduser._id}`)
        .then(()=>{refetch()})
 }
 
 
 const handleMAkeInstructor =inuser=>{
-    axios.put(`http://localhost:5000/users/makeainstructor/${inuser._id}`)
+    axios.put(`https://ass-sever.vercel.app/users/makeainstructor/${inuser._id}`)
     .then(()=>{refetch()})
 }
 

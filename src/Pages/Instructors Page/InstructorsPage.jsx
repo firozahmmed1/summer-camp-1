@@ -5,7 +5,7 @@ import axios from "axios";
 
 const InstructorsPage = () => {
     const{data:intructors=[]}= useQuery(['intructors'], async()=>{
-           const res = await axios.get('http://localhost:5000/users/insalldata')
+           const res = await axios.get('https://ass-sever.vercel.app/users/insalldata')
               return res.data
     })
     console.log(intructors)

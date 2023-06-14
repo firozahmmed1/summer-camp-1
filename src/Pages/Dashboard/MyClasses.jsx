@@ -8,7 +8,6 @@ const MyClasses = () => {
         const res =await axiosSecure.get('/classes')
         return res.data
     });
-
     return (
         <div className="overflow-x-auto w-full">
             <table className="table table-xs">

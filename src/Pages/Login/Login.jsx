@@ -46,7 +46,7 @@ const Login = () => {
         .then((result)=>{
             const user = result?.user;
             const updateUser = { name: user?.displayName, image:user?.photoURL, email: user?.email, role: "student" }
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://ass-sever.vercel.app/users', {
                         method: "post",
                         headers: {
                             "content-type": "application/json"

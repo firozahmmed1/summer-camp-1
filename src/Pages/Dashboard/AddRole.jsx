@@ -9,7 +9,7 @@ const AddRole = () => {
         return res.data
     });
     const handleInstracture = (insUser) => {
-        fetch(`http://localhost:5000/users/${insUser._id}`, {
+        fetch(`https://ass-sever.vercel.app/users/${insUser._id}`, {
             method: 'put'
         })
             .then(res => res.json())
@@ -29,7 +29,7 @@ const AddRole = () => {
      }
 
      const handleAdmin =(adminUser)=>{
-        fetch(`http://localhost:5000/users/admin/${adminUser._id}`, {
+        fetch(`https://ass-sever.vercel.app/users/admin/${adminUser._id}`, {
             method: 'put'
         })
             .then(res => res.json())

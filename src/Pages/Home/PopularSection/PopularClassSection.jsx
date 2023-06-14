@@ -6,7 +6,7 @@ import axios from "axios";
 const PopularClassSection = () => {
     const [users, setUaser] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/classes/popularclasses')
+        axios.get('https://ass-sever.vercel.app/classes/popularclasses')
             .then(res => setUaser(res.data)
             )
     }, [])

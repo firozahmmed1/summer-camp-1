@@ -16,7 +16,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/booking/${cart._id}`)
+                axios.delete(`https://ass-sever.vercel.app/booking/${cart._id}`)
                 .then(res=> {
                     refetch()
                      if(res.data.deletedCount>0){
