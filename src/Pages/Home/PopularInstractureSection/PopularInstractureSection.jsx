@@ -1,6 +1,13 @@
 import { Zoom } from "react-awesome-reveal";
 import Container from "../../../Components/Container/Container";
-const PopularInstractureSection = () => {
+import {useQuery} from '@tanstack/react-query'
+import axios from "axios";
+const PopularInstractureSection = () => { 
+
+    const {data: users=[]}= useQuery(['users'], async()=>{
+          const res = await axios.get('http://localhost:5000/users/inslimit');
+          return res.data
+    })
     return (
         <div className="mb-40">
             <Container>
@@ -10,17 +17,22 @@ const PopularInstractureSection = () => {
                     </Zoom>
                     <div className="divider"></div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-4 gap-5">
-                    <div className="card w-full border">
-                        <div className="card-body">
-                            <div className="avatar flex justify-center items-center">
-                                <div className="w-full rounded-full">
-                                    <img src="https://i.ibb.co/YZv93S9/339266532-527372782919415-6578240290515521451-n.jpg" />
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    {
+                        users.map((user, index)=> (
+                            <div key={index} className="card w-full border bg-[#239B56]">
+                            <div className="card-body">
+                                <div className="avatar flex justify-center items-center">
+                                    <div className="w-full rounded-full">
+                                        <img src={user?.image} />
+                                    </div>
                                 </div>
+                                <h2 className="card-title italic flex justify-center items-center text-white">{user?.name}</h2>
                             </div>
-                            <h2 className="card-title italic flex justify-center items-center">Card title!</h2>
                         </div>
-                    </div>
+                        ))
+                    }
+                   
                 </div>
             </Container>
         </div>

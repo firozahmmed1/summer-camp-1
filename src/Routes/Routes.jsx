@@ -19,6 +19,9 @@ import ManagesClasses from "../Pages/Dashboard/ManagesClasses";
 import ManageUser from "../Pages/Dashboard/ManageUser";
 import InstructorsPage from "../Pages/Instructors Page/InstructorsPage";
 import Classes from "../Pages/Classes/Classes";
+import StudentRoute from "./StudentRoute";
+import AdminRoute from "./AdminRoute";
+import InstuctorRoute from "./InstuctorRoute";
 
 export const router = createBrowserRouter([
     {
@@ -44,43 +47,43 @@ export const router = createBrowserRouter([
                     //--------- Student
                     {
                         path:'/dashboard/addrole',
-                        element:<AddRole></AddRole>
+                        element:<StudentRoute><AddRole></AddRole></StudentRoute>
                     },
                     {
                         path:'/dashboard/myseletedclass',
-                        element:<SelectedClass></SelectedClass>
+                        element:<StudentRoute><SelectedClass></SelectedClass></StudentRoute>
                     },
                     {
                         path:'/dashboard/myenrolledclasses',
-                        element:<MyEnrolledClasses></MyEnrolledClasses>
+                        element:<StudentRoute><MyEnrolledClasses></MyEnrolledClasses></StudentRoute>
                     },
                     {
-                        path:'/dashboard/payment',
-                        element:<Payment></Payment>
+                        path:'/dashboard/payment/:id',
+                        element:<StudentRoute><Payment></Payment></StudentRoute>
                     },
                     {
                         path:'/dashboard/paymenthistory',
-                        element:<PaymentHistory></PaymentHistory>
+                        element:<StudentRoute><PaymentHistory></PaymentHistory></StudentRoute>
                     },
 
                     // ------------------instracture--------
                     {
                         path:'/dashboard/addaclass',
-                        element:<AddaClass></AddaClass>
+                        element:<InstuctorRoute><AddaClass></AddaClass></InstuctorRoute>
                     },
                     {
                         path:'/dashboard/myclasses',
-                        element:<MyClasses></MyClasses>
+                        element:<InstuctorRoute><MyClasses></MyClasses></InstuctorRoute>
                     },
 
                     // -------Admin-------
                     {
                         path:'/dashboard/manageclasses',
-                        element:<ManagesClasses></ManagesClasses>
+                        element:<AdminRoute><ManagesClasses></ManagesClasses></AdminRoute>
                     },
                     {
                         path:'/dashboard/manageuser',
-                        element:<ManageUser></ManageUser>
+                        element:<AdminRoute><ManageUser></ManageUser></AdminRoute>
                     }
 
                 ])

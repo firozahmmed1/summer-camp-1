@@ -1,7 +1,14 @@
 import { Zoom } from "react-awesome-reveal";
 import Container from "../../Components/Container/Container"
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const InstructorsPage = () => {
+    const{data:intructors=[]}= useQuery(['intructors'], async()=>{
+           const res = await axios.get('http://localhost:5000/users/insalldata')
+              return res.data
+    })
+    console.log(intructors)
     return (
         <Container>
             <Zoom>
@@ -11,7 +18,7 @@ const InstructorsPage = () => {
             <div className="overflow-x-auto mb-40">
                 <table className="table">
                     {/* head */}
-                    <thead>
+                    <thead className="bg-orange-700 text-white">
                         <tr>
                             <th>
                                 #
@@ -22,26 +29,30 @@ const InstructorsPage = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* row 1 */}
-                        <tr>
-                            <th>
-                                1
-                            </th>
-                            <td>
-                                <div className="flex items-center space-x-3">
-                                    <div className="avatar">
-                                        <div className="rounded w-24">
-                                            <img src="https://i.ibb.co/YZv93S9/339266532-527372782919415-6578240290515521451-n.jpg" />
+                        {
+                            intructors.map((ins,index)=> (
+                                <tr key={index} className="bg-slate-300">
+                                <th>
+                                    {index+1}
+                                </th>
+                                <td>
+                                    <div className="flex items-center space-x-3">
+                                        <div className="avatar">
+                                            <div className="rounded w-24">
+                                                <img src={ins?.image} />
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td>
-                                Zemlak, Daniel and Leannon
-                            </td>
-                            <td>Purple</td>
-                            
-                        </tr>
+                                </td>
+                                <td className="text-xl font-semibold text-green-950">
+                                    {ins?.name}
+                                </td>
+                                <td className="text-pink-600">{ins?.email}</td>
+                                
+                            </tr>
+                            ))
+                        }
+                       
                     </tbody>
                 </table>
             </div>

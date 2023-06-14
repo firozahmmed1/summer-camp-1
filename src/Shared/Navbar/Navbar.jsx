@@ -3,27 +3,38 @@ import Container from "../../Components/Container/Container";
 import logo from "../../assets/logo/ass-12-logo.png"
 import useAuth from "../../../public/useAuth/useAuth";
 import Swal from "sweetalert2";
+import useCart from "../../Hooks/useCart";
+
+
 const Navbar = () => {
-    const { user,LogOut } = useAuth()
+    const { user, LogOut } = useAuth();
+    const[cartValue]=useCart()
+   
     const navOptions = <>
         <Link to="/" className="px-2 font-semibold text-[16px] text-green-950">Home</Link>
         <Link to="/instructorspage" className="px-2 font-semibold text-[16px] text-green-950">Instructors</Link>
         <Link to="/classes" className="px-2 font-semibold text-[16px] text-green-950">Classes</Link>
+        <Link to="/dashboard/myseletedclass">
+            <p className="px-2 font-semibold text-[16px] text-green-950">
+                Cart
+                <div className="badge badge-secondary ml-1">{cartValue.length}</div>
+            </p>
+        </Link>
         {user && <Link to="/dashboard" className="px-2 font-semibold text-[16px] text-green-950">Dashboard</Link>}
 
-    </> 
-    const handleLogOut =()=>{
+    </>
+    const handleLogOut = () => {
         LogOut()
-        .then(()=>{
-            Swal.fire({
-                position: 'top-center',
-                icon: 'success',
-                title: 'Successfully Logout',
-                showConfirmButton: false,
-                timer: 1500
-              })
-        })
-        .catch(()=>{})
+            .then(() => {
+                Swal.fire({
+                    position: 'top-center',
+                    icon: 'success',
+                    title: 'Successfully Logout',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+            .catch(() => { })
     }
     return (
         <Container>

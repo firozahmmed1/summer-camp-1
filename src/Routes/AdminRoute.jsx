@@ -2,18 +2,23 @@
 import { Navigate, useLocation } from "react-router-dom";
 import useAuth from "../../public/useAuth/useAuth";
 import Loader from "../Shared/Loader/Loader";
+import useAdmin from "../Hooks/useAdmin/useAdmin";
 
-const PraviteRoute = ({children}) => {
+
+const AdminRoute = ({children}) => {
     const {user,loading} = useAuth();
     const location = useLocation();
+    const [isAdmin] =useAdmin();
+    
     if(loading){
         return <Loader></Loader>
     }
 
-    if(user){
+    if(user && isAdmin){
         return children;
     }
-    return <Navigate to="/login" state={{ from: location }} replace ></Navigate>
+    return <Navigate to="/" state={{ from: location }} replace ></Navigate>
+
 };
 
-export default PraviteRoute;
+export default AdminRoute;

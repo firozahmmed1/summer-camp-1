@@ -45,7 +45,7 @@ const Login = () => {
         socialLogin()
         .then((result)=>{
             const user = result?.user;
-            const updateUser = { name: user?.displayName, email: user?.email, role: "student" }
+            const updateUser = { name: user?.displayName, image:user?.photoURL, email: user?.email, role: "student" }
                     fetch('http://localhost:5000/users', {
                         method: "post",
                         headers: {

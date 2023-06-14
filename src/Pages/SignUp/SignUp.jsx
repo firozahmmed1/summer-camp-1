@@ -35,7 +35,7 @@ const SignUp = () => {
                 })
                 createProfile(data.name, data.photo)
                     .then(() => {
-                        const updateUser = { name: data.name, email: data.email, role: "student" }
+                        const updateUser = { name: data.name, email: data.email, image:data.photo, role: "student" }
                         fetch('http://localhost:5000/users', {
                             method: "post",
                             headers: {
@@ -64,7 +64,7 @@ const SignUp = () => {
         socialLogin()
             .then((result) => {
                 const user = result.user;
-                const updateUser = { name: user?.displayName, email: user?.email, role: "student" }
+                const updateUser = { name: user?.displayName, email: user?.email, iamge:user?.photoURL, role: "student" }
                         fetch('http://localhost:5000/users', {
                             method: "post",
                             headers: {
